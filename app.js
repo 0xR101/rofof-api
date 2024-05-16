@@ -7,6 +7,11 @@ const bookRouter = require("./routes/bookRoutes"); // importing routes
 const userRouter = require("./routes/authRoutes"); // importing routes
 const { static } = require("express");
 const fileSystem = require("./file/fileSystem");
+const cors = require("cors");
+
+app.use(cors);
+
+
 require("dotenv").config();
 
 const app = express();
