@@ -5,13 +5,9 @@ const Book = require("./database/schemas/books");
 const { connectToDb } = require("./database/db");
 const bookRouter = require("./routes/bookRoutes"); // importing routes
 const userRouter = require("./routes/authRoutes"); // importing routes
+const CommentRouter = require("./routes/commentRoutes"); // importing routes
 const { static } = require("express");
 const fileSystem = require("./file/fileSystem");
-const cors = require("cors");
-
-app.use(cors);
-
-
 require("dotenv").config();
 
 const app = express();
@@ -119,6 +115,7 @@ app.use((req, res, next) => {
 
 app.use("/api/v1/books", bookRouter);
 app.use("/api/v1/users", userRouter);
+app.use("/api/v1/comments", CommentRouter);
 
 /**
  *

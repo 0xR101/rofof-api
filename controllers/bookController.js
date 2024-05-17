@@ -168,7 +168,9 @@ exports.createNewBook = async (req, res) => {
 		console.log(req.body);
 
 		const newBook = new Book({
-			image: "/images/" + req.file.path.split("\\").pop(),
+			image:
+				"http://localhost:5000/images/" +
+				req.file.path.split("\\").pop(),
 			title,
 			description,
 			ISBN: JSON.parse(ISBN), //
@@ -217,8 +219,8 @@ exports.deleteBook = (req, res) => {
 exports.getRecommendations = async (req, res) => {
 	try {
 		const recentBooks = await Book.find()
-			.sort({ publishedDate: -1 })
-			.limit(5);
+			.sort({ listingDate: -1 })
+			.limit(6);
 
 		await res.status(200).json({
 			status: "success",
