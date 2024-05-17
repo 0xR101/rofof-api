@@ -24,6 +24,7 @@ const app = express();
 
 app.use("/images/", static("assets/cover"));
 app.use("/images/", static("assets/avatar"));
+app.use("/icons/", static("assets/icons"));
 
 app.use((req, res, next) => {
 	connectToDb(async (err) => {
