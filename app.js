@@ -12,9 +12,9 @@ require("dotenv").config();
 
 const app = express();
 
-app.post("/api/upload", fileSystem.uploadAvatar(), function (req, res, next) {
-	res.json(req.file.path.split("\\").pop());
-});
+// app.post("/api/upload", fileSystem.uploadAvatar(), function (req, res, next) {
+// 	res.json(req.file.path.split("\\").pop());
+// });
 
 // here we can use this to make the url of the image
 
@@ -40,7 +40,7 @@ app.use(cors());
 
 // CORS configuration
 const corsOptions = {
-	origin: "http://localhost:5173", // Set this to your frontend's URL
+	origin: "https://rofof-api-production.up.railway.app", // Set this to your frontend's URL
 	credentials: true, // This allows the backend to accept cookies from the frontend
 };
 
@@ -125,7 +125,7 @@ app.use("/api/v1/comments", CommentRouter);
  */
 
 app.get("/", (req, res) => {
-	res.status(200).send("<>Hello World");
+	res.status(200).send("<h1>welcome to our server :> <h1>");
 });
 
 const PORT = process.env.PORT || 3000;
