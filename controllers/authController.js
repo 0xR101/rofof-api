@@ -98,7 +98,7 @@ exports.updateUser = async (req, res) => {
 			phoneNumber: req.body.phoneNumber,
 			address: req.body.address,
 			profileImage:
-				"http://localhost:5000/images/" +
+				`https://rofof-api-production.up.railway.app/images/` +
 				req.file.path.split("\\").pop(),
 		};
 
@@ -164,7 +164,8 @@ exports.getUserInfo = async (req, res) => {
 			email: user.email,
 			username: user.username,
 			profileImage:
-				user.profileImage || "http://localhost:5000/images/profile.png",
+				user.profileImage ||
+				"https://rofof-api-production.up.railway.app/images/profile.png",
 			phoneNumber: user.phoneNumber || "No phone number provided",
 			address: user.address || "No address provided",
 			comments: user.comments,

@@ -169,7 +169,7 @@ exports.createNewBook = async (req, res) => {
 
 		const newBook = new Book({
 			image:
-				"http://localhost:5000/images/" +
+				"https://rofof-api-production.up.railway.app/images/" +
 				req.file.path.split("\\").pop(),
 			title,
 			description,
