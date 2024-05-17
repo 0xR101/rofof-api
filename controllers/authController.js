@@ -99,7 +99,7 @@ exports.updateUser = async (req, res) => {
 			address: req.body.address,
 			profileImage:
 				`https://rofof-api-production.up.railway.app/images/` +
-				req.file.path.split("\\").pop(),
+				req.file.path.split("/").pop(),
 		};
 
 		let doc = await User.findOneAndUpdate(
