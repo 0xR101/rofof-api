@@ -42,7 +42,7 @@ app.use(cors());
 
 // CORS configuration
 const corsOptions = {
-	origin: "*", // Set this to your frontend's URL
+	origin: true, // Set this to your frontend's URL
 	credentials: true, // This allows the backend to accept cookies from the frontend
 };
 
